@@ -1,28 +1,41 @@
-# CuentaLetrasObj
+# 🔤 Cuenta Letras (POO)
 
-Proyecto Java para contar letras utilizando programación orientada a objetos.
+Proyecto Java para contar letras utilizando programación orientada a objetos desarrollado por **Isaac Esteban Haro Torres**.
 
-## Descripción
+---
+
+## 📝 Descripción
 
 Aplicación Java que cuenta las ocurrencias de cada letra en un texto utilizando clases y objetos.
 
-## Características
+---
+
+## ✨ Características
 
 - Conteo de frecuencia de letras
 - Implementación de POO
 - Manejo de cadenas de texto
 
-## Stack Tecnológico
+---
+
+## 🛠️ Stack Tecnológico
 
 - Java SE
 - Programación Orientada a Objetos
 
-## Autor
+---
 
-🧑‍💻 **Isaac Haro**
+## 👨‍💻 Desarrollado por Isaac Esteban Haro Torres
 
-Ingeniero en Sistemas · Full Stack · Automatización · Data
+**Ingeniero en Sistemas · Full Stack · Automatización · Data**
 
-## Licencia
+- 📧 Email: zackharo1@gmail.com
+- 📱 WhatsApp: 098805517
+- 💻 GitHub: https://github.com/ieharo1
+- 🌐 Portafolio: https://ieharo1.github.io/portafolio-isaac.haro/
 
-MIT — contribuciones bienvenidas 🚀
+---
+
+## 📄 Licencia
+
+© 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.
