@@ -1,2 +1,0 @@
-cuentaletrasobj.Item
-cuentaletrasobj.CuentaLetrasObj

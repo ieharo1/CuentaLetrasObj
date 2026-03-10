@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Procesamiento de texto en Linux - CuentaLetrasObj</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <h1>CuentaLetrasObj</h1>
+          <p>Laboratorio de texto</p>
+        </div>
+        <nav>
+          <a href="#intro">Objetivo</a>
+          <a href="#comandos">Comandos</a>
+          <a href="#pipelines">Pipelines</a>
+          <a href="#terminal">Terminal</a>
+          <a href="#scripts">Scripts bash</a>
+          <a href="#docs">Documentacion</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="hero">
+          <div>
+            <p class="tag">Procesamiento de texto</p>
+            <h2>Analiza archivos con pipelines y herramientas clasicas</h2>
+            <p>
+              Aprende a contar palabras, filtrar logs y limpiar texto usando
+              comandos de Linux.
+            </p>
+          </div>
+          <div class="hero-box">
+            <h3>Pipeline avanzado</h3>
+            <code>cat log.txt | grep ERROR | wc -l</code>
+            <p>Cuenta errores en un archivo de log.</p>
+          </div>
+        </header>
+
+        <section id="intro" class="panel">
+          <h3>Objetivo</h3>
+          <p>
+            Dominar herramientas de analisis de texto para tareas de soporte,
+            data y DevOps.
+          </p>
+        </section>
+
+        <section class="search">
+          <input id="search" type="search" placeholder="Buscar comando..." />
+          <span>Ejemplo: grep, awk, sed</span>
+        </section>
+
+        <section id="comandos" class="panel">
+          <div class="panel-header">
+            <h3>Comandos de texto</h3>
+            <p>Haz clic en Ejecutar para ver la salida simulada.</p>
+          </div>
+          <div class="grid four">
+            <article
+              class="card command-card"
+              data-command="wc -w archivo.txt"
+              data-output="Palabras en archivo.txt\\n325"
+              data-tags="wc"
+            >
+              <h4>wc</h4>
+              <p>Cuenta lineas, palabras y bytes.</p>
+              <code>$ wc -w archivo.txt</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ wc -l archivo.txt">Copiar</button>
+              </div>
+            </article>
+            <article
+              class="card command-card"
+              data-command="grep \"error\" log.txt"
+              data-output="Filtrando\\n[ERROR] fallo de conexion"
+              data-tags="grep buscar"
+            >
+              <h4>grep</h4>
+              <p>Busca patrones en archivos.</p>
+              <code>$ grep "error" log.txt</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ grep -n \"ERROR\" log.txt">Copiar</button>
+              </div>
+            </article>
+            <article
+              class="card command-card"
+              data-command="awk '{print $1}' datos.csv"
+              data-output="Imprimiendo columna\\nID001"
+              data-tags="awk"
+            >
+              <h4>awk</h4>
+              <p>Procesa columnas y campos.</p>
+              <code>$ awk '{print $1}' datos.csv</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ awk -F, '{print $2}' datos.csv">Copiar</button>
+              </div>
+            </article>
+            <article
+              class="card command-card"
+              data-command="sed 's/error/ok/g' log.txt"
+              data-output="Reemplazando texto\\n[OK] conexion"
+              data-tags="sed reemplazar"
+            >
+              <h4>sed</h4>
+              <p>Transforma texto con reglas.</p>
+              <code>$ sed 's/error/ok/g' log.txt</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ sed -n '1,5p' log.txt">Copiar</button>
+              </div>
+            </article>
+            <article
+              class="card command-card"
+              data-command="cut -d, -f2 datos.csv"
+              data-output="Cortando columnas\\nJuan"
+              data-tags="cut"
+            >
+              <h4>cut</h4>
+              <p>Extrae columnas por delimitador.</p>
+              <code>$ cut -d, -f2 datos.csv</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ cut -d: -f1 /etc/passwd">Copiar</button>
+              </div>
+            </article>
+            <article
+              class="card command-card"
+              data-command="sort lista.txt"
+              data-output="Ordenando\\nana\\njuan\\nzoe"
+              data-tags="sort"
+            >
+              <h4>sort</h4>
+              <p>Ordena lineas de texto.</p>
+              <code>$ sort lista.txt</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ sort -r lista.txt">Copiar</button>
+              </div>
+            </article>
+            <article
+              class="card command-card"
+              data-command="uniq -c lista.txt"
+              data-output="Contando repetidos\\n3 error\\n1 warning"
+              data-tags="uniq"
+            >
+              <h4>uniq</h4>
+              <p>Elimina repetidos o cuenta ocurrencias.</p>
+              <code>$ uniq -c lista.txt</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ sort lista.txt | uniq -c">Copiar</button>
+              </div>
+            </article>
+            <article
+              class="card command-card"
+              data-command="tr 'a-z' 'A-Z' < archivo.txt"
+              data-output="Transformando\\nHOLA LINUX"
+              data-tags="tr"
+            >
+              <h4>tr</h4>
+              <p>Transforma caracteres.</p>
+              <code>$ tr 'a-z' 'A-Z' < archivo.txt</code>
+              <div class="actions">
+                <button class="run-btn">Ejecutar</button>
+                <button class="copy-btn" data-copy="$ tr -d '\\r' < archivo.txt">Copiar</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="pipelines" class="panel">
+          <h3>Visualizacion de pipelines</h3>
+          <div class="grid two">
+            <article class="card">
+              <h4>Pipeline basico</h4>
+              <pre>
+cat log.txt | grep ERROR | wc -l
+  |         |            |
+archivo   filtro       conteo
+              </pre>
+            </article>
+            <article class="card">
+              <h4>Pipeline de limpieza</h4>
+              <pre>
+cat datos.csv | cut -d, -f2 | tr 'a-z' 'A-Z' | sort
+              </pre>
+            </article>
+          </div>
+        </section>
+
+        <section id="terminal" class="panel terminal-panel">
+          <h3>Terminal simulada</h3>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span></span><span></span><span></span>
+              <p>bash - texto@linux</p>
+            </div>
+            <div id="terminal-output" class="terminal-output"></div>
+            <div class="terminal-input">
+              <span>$</span>
+              <input id="terminal-input" type="text" placeholder="Escribe un comando..." />
+              <button id="terminal-run">Ejecutar</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="scripts" class="panel">
+          <h3>Scripts bash incluidos</h3>
+          <div class="grid three">
+            <article class="card">
+              <h4>word_counter.sh</h4>
+              <code>bash bash/word_counter.sh</code>
+            </article>
+            <article class="card">
+              <h4>log_analyzer.sh</h4>
+              <code>bash bash/log_analyzer.sh</code>
+            </article>
+            <article class="card">
+              <h4>text_cleaner.sh</h4>
+              <code>bash bash/text_cleaner.sh</code>
+            </article>
+          </div>
+        </section>
+
+        <section id="docs" class="panel">
+          <h3>Documentacion</h3>
+          <p>Guia completa en <strong>docs/guia.md</strong>.</p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
