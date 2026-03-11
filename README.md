@@ -1,4 +1,4 @@
-# Procesamiento de texto en Linux - CuentaLetrasObj
+# Procesamiento de texto en Linux
 
 Laboratorio para analizar texto con herramientas clasicas de Linux.
 
@@ -60,7 +60,6 @@ bash bash/text_cleaner.sh
 ## Estructura del proyecto
 
 ```
-CuentaLetrasObj
 ├── index.html
 ├── css/
 │   └── styles.css
